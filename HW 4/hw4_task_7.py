@@ -3,9 +3,10 @@ from math import factorial
 
 
 def fact(n):
-    n = int(input('Enter number: '))
-    for el in fact(n):
-        yield factorial(n)
+    yield factorial(n)
 
 
-print(fact(int(input('Enter number: '))))
+total = 1
+for el in fact(int(input('Enter a number: '))):
+    total = total * el
+print(total)
